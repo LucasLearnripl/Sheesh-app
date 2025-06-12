@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import { setupStaticServing } from './static-serve.js';
-import { db } from './database.js';
+// import { db } from './database.js';
 
 // Load environment variables
 dotenv.config();
