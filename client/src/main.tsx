@@ -1,21 +1,17 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom/client';
-import App from './App';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Signup from './Signup';
+// import other pages like Home, Dashboard, etc. as needed
 
-import './index.css';
-
-const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-function updateDarkClass(e = null) {
-  const isDark = e ? e.matches : darkQuery.matches;
-  document.documentElement.classList.toggle('dark', isDark);
+function App() {
+  return (
+    <Router>
+      <Routes>
+        {/* Add your existing routes below */}
+        <Route path="/signup" element={<Signup />} />
+        {/* Example: <Route path="/" element={<Home />} /> */}
+      </Routes>
+    </Router>
+  );
 }
 
-updateDarkClass();
-darkQuery.addEventListener('change', updateDarkClass);
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-);
+export default App;
